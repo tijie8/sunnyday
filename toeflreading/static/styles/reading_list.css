@@ -1,0 +1,25 @@
+.tpo-reading {
+  float: left;
+  width: 100px;
+  margin: 8px 8px;
+}
+h4 {
+  color: rgb(133, 126, 126);
+}
+.fb-comments {
+  margin-top: 30px;
+}
+.fb-share-button {
+  display: inline;
+}
+.fb-like {
+  margin-left: 20px;
+  display: inline;
+}
+h2 {
+  display: inline;
+  padding-bottom: 30px;
+}
+.title {
+  padding-bottom: 30px;
+}
