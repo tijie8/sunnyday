@@ -15,27 +15,8 @@ router.get('/toefl/reading/:name', function *(next) {
   var name = this.params['name'];
   var title = yield toeflloader.getTitle(name); 
   var paragraphs = yield toeflloader.getParagraphs(name); 
+  var questions = yield toeflloader.getQuestions(name);
 
-  // TODO(nicholas): load actual data in toeflreading.js.
-  var data = yield fs.readFile(
-    'lib/data/reading/reading_question_' + name + '.data',
-    {encoding: 'utf-8'});
-  var lines = data.split('\n'); 
-  var questions = [];
-  var question = '';
-  lines.map(function(line) {
-    if (line.trim().length == 0) {
-      if (question.trim().length > 0) {
-        questions.push(question.trim());
-        question = '';
-      }
-    } else {
-      question = question + line;
-    }
-  });
-  if (question.length > 0) {
-    questions.push(question);
-  }
   yield this.render('reading', {
     title: title,
     paragraphs: paragraphs,

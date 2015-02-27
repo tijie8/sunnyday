@@ -41,3 +41,11 @@ describe('#getParagraphs', function() {
     });
   });
 });
+describe('#getQuestions', function() {
+  it('shoud return 14 questions for tpo1-1', function() {
+    return co(function *() {
+      var questions = yield toeflloader.getQuestions('tpo1-1');
+      expect(questions.length).equals(14);
+    });
+  });
+});

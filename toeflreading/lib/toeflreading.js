@@ -6,6 +6,7 @@ var path = require('path');
 var cachedTpoNames_;
 var cachedParagraphs_ = {};
 var cachedTitles_ = {};
+var cachedQuestions_ = {};
 
 var loader = module.exports = {
   loadTpoNames: function *() {
@@ -39,6 +40,36 @@ var loader = module.exports = {
     }
     return cachedParagraphs_[name];
   },
+
+  getQuestions: function *(name) {
+    if (!cachedQuestions_[name]) {
+      yield loadQuestions_(name);
+    }
+    return cachedQuestions_[name];
+  },
+};
+
+function *loadQuestions_(name) {
+  var data = yield fs.readFile(
+      'lib/data/reading/reading_question_' + name + '.data',
+  {encoding: 'utf-8'});
+  var lines = data.split('\n'); 
+  var questions = [];
+  var question = '';
+  lines.map(function(line) {
+    if (line.trim().length == 0) {
+      if (question.trim().length > 0) {
+        questions.push(question.trim());
+        question = '';
+      }
+    } else {
+      question = question + line;
+    }
+  });
+  if (question.length > 0) {
+    questions.push(question);
+  }
+  cachedQuestions_[name] = questions;
 };
 
 function *loadArticle_(name) {
