@@ -2,14 +2,10 @@
 
 var router = require('koa-router')();
 var fs = require('co-fs');
+var toelfloader = require('../lib/toelfreading');
 
 router.get('/toefl/reading', function *(next) {
-  var names = [];
-  for (var i = 1; i <= 25; i++) {
-    for (var j = 1; j <= 4; j++) {
-      names.push('tpo'+i+'-'+j);
-    }
-  }
+  var names = yield toelfloader.loadTpoNames(); 
   yield this.render('reading_list', {
     names: names 
   });
@@ -17,15 +13,16 @@ router.get('/toefl/reading', function *(next) {
 
 router.get('/toefl/reading/:name', function *(next) {
   var name = this.params['name'];
+  // TODO(nicholas): load actual data in toelfreading.js.
   var data = yield fs.readFile(
-      'data/reading/reading_' + name + '.data',
+      'lib/data/reading/reading_' + name + '.data',
       {encoding: 'utf-8'});
   var lines = data.split('\n');
   var title = lines[0];
   var paragraphs = lines.slice(1, lines.length);
 
   data = yield fs.readFile(
-    'data/reading/reading_question_' + name + '.data',
+    'lib/data/reading/reading_question_' + name + '.data',
     {encoding: 'utf-8'});
   var lines = data.split('\n'); 
   var questions = [];
