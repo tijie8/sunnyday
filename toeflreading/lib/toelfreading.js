@@ -14,9 +14,23 @@ var loader = module.exports = {
             'reading_'.length, fileName.indexOf('.')));
       }
     });
-    // TODO(nicholas): sort file names.
+    retFiles.sort(compareTpoName_);
     return retFiles;
   }
+};
+
+var filePattern = /tpo(\d+)-(\d+)/;
+function compareTpoName_(file1, file2) {
+  var m1 = file1.match(filePattern);
+  var m2 = file2.match(filePattern);
+  var n1 = m1[1];
+  var n2 = m2[1];
+  var n1_1 = m1[2];
+  var n2_1 = m2[2];
+  if (n1 == n2) {
+    return n1_1 - n2_1;
+  }
+  return n1 - n2;
 };
 
 

@@ -10,6 +10,11 @@ describe('#loadTpoNames', function() {
     return co(function *() {
       var files = yield toelfloader.loadTpoNames();
       expect(files.length).equals(72)
+      expect(files.slice(0, 5)).eql(['tpo1-1',
+        'tpo1-2',
+        'tpo1-3',
+        'tpo2-1',
+        'tpo2-2']);
     });
   });
   it('should only contains "/^tpo\d+-\d+$/"', function() {
