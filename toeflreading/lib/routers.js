@@ -2,7 +2,7 @@
 
 var router = require('koa-router')();
 var fs = require('co-fs');
-var toeflloader = require('../lib/toelfreading');
+var toeflloader = require('../lib/toeflreading');
 
 router.get('/toefl/reading', function *(next) {
   var names = yield toeflloader.loadTpoNames(); 
@@ -16,7 +16,7 @@ router.get('/toefl/reading/:name', function *(next) {
   var title = yield toeflloader.getTitle(name); 
   var paragraphs = yield toeflloader.getParagraphs(name); 
 
-  // TODO(nicholas): load actual data in toelfreading.js.
+  // TODO(nicholas): load actual data in toeflreading.js.
   var data = yield fs.readFile(
     'lib/data/reading/reading_question_' + name + '.data',
     {encoding: 'utf-8'});

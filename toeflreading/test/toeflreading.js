@@ -2,12 +2,12 @@
 
 var expect = require('chai').expect
 var co = require('co');
-var toelfloader = require('../lib/toelfreading');
+var toeflloader = require('../lib/toeflreading');
 
 describe('#loadTpoNames', function() {
   it('should load 72 tpo data', function() {
     return co(function *() {
-      var files = yield toelfloader.loadTpoNames();
+      var files = yield toeflloader.loadTpoNames();
       expect(files.length).equals(72)
       expect(files.slice(0, 5)).eql(['tpo1-1',
         'tpo1-2',
@@ -18,7 +18,7 @@ describe('#loadTpoNames', function() {
   });
   it('should only contains "/^tpo\d+-\d+$/"', function() {
     return co(function *() {
-      var files = yield toelfloader.loadTpoNames();
+      var files = yield toeflloader.loadTpoNames();
       files.forEach(function (file) {
         expect(file.match(/^tpo\d+-\d+$/)[0]).equals(file);
       });
@@ -28,7 +28,7 @@ describe('#loadTpoNames', function() {
 describe('#getTitle', function() {
   it('shoud return GROUNDWATER for tpo1-1', function() {
     return co(function *() {
-      var title = yield toelfloader.getTitle('tpo1-1');
+      var title = yield toeflloader.getTitle('tpo1-1');
       expect(title).equals('GROUNDWATER');
     });
   });
@@ -36,7 +36,7 @@ describe('#getTitle', function() {
 describe('#getParagraphs', function() {
   it('shoud return 10 paragraphs for tpo1-1', function() {
     return co(function *() {
-      var paragraphs = yield toelfloader.getParagraphs('tpo1-1');
+      var paragraphs = yield toeflloader.getParagraphs('tpo1-1');
       expect(paragraphs.length).equals(10);
     });
   });
