@@ -6,7 +6,6 @@ var toelfloader = require('../lib/toelfreading');
 
 describe('#loadTpoNames', function() {
   it('should load 72 tpo data', function() {
-    console.log('Got files...');
     return co(function *() {
       var files = yield toelfloader.loadTpoNames();
       expect(files.length).equals(72)
@@ -23,6 +22,22 @@ describe('#loadTpoNames', function() {
       files.forEach(function (file) {
         expect(file.match(/^tpo\d+-\d+$/)[0]).equals(file);
       });
+    });
+  });
+});
+describe('#getTitle', function() {
+  it('shoud return GROUNDWATER for tpo1-1', function() {
+    return co(function *() {
+      var title = yield toelfloader.getTitle('tpo1-1');
+      expect(title).equals('GROUNDWATER');
+    });
+  });
+});
+describe('#getParagraphs', function() {
+  it('shoud return 10 paragraphs for tpo1-1', function() {
+    return co(function *() {
+      var paragraphs = yield toelfloader.getParagraphs('tpo1-1');
+      expect(paragraphs.length).equals(10);
     });
   });
 });

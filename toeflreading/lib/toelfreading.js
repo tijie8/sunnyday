@@ -3,8 +3,15 @@
 var fs = require('co-fs');
 var path = require('path');
 
+var cachedTpoNames_;
+var cachedParagraphs_ = {};
+var cachedTitles_ = {};
+
 var loader = module.exports = {
   loadTpoNames: function *() {
+    if (cachedTpoNames_) {
+      return cachedTpoNames_;
+    }
     var files = yield fs.readdir(__dirname + '/data/reading/');
     var retFiles = [];
     files.forEach(function(file) {
@@ -15,8 +22,34 @@ var loader = module.exports = {
       }
     });
     retFiles.sort(compareTpoName_);
+    cachedTpoNames_ = retFiles;
     return retFiles;
-  }
+  },
+
+  getTitle: function*(name) {
+    if (!cachedTitles_[name]) {
+      yield loadArticle_(name);
+    }
+    return cachedTitles_[name];
+  },
+
+  getParagraphs: function *(name) {
+    if (!cachedParagraphs_[name]) {
+      yield loadArticle_(name); 
+    }
+    return cachedParagraphs_[name];
+  },
+};
+
+function *loadArticle_(name) {
+  var data = yield fs.readFile(
+    __dirname  + '/data/reading/reading_' + name + '.data',
+    {encoding: 'utf-8'});
+  var lines = data.split('\n');
+  var title = lines[0];
+  var paragraphs = lines.slice(1, lines.length);
+  cachedParagraphs_[name] = paragraphs;
+  cachedTitles_[name] = title;
 };
 
 var filePattern = /tpo(\d+)-(\d+)/;
