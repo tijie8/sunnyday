@@ -1,6 +1,7 @@
 'use strict';
 
 var app = require('./lib/server');
-
-app.listen(8080);
+var port = 8080;
+console.log('Starting server on port:' + port);
+app.listen(port);
 
