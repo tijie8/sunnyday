@@ -8,14 +8,14 @@
 
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" /> 
     <link rel="stylesheet" href="/styles/base.css" />
-    <script src="/jquery/dist/jquery.min.js"></script>
 
     <link rel="icon" type="image/png" href="images/myicon.jpg">
 
     <link rel="stylesheet" href="/styles/<%= pageName%>.css" />
-    <script src="/scripts/<%= pageName%>.js" async></script>
+    <script src="/scripts/<%= pageName%>.js" defer></script>
   </head>
   <body>
     <%- body %>
+    <script src="/jquery/dist/jquery.min.js"></script>
   </body>
 </html>
