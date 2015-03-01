@@ -7,7 +7,8 @@ var toeflloader = require('../lib/toeflreading');
 router.get('/toefl/reading', function *(next) {
   var names = yield toeflloader.loadTpoNames(); 
   yield this.render('reading_list', {
-    names: names 
+    names: names,
+    pageName: "reading_list"
   });
 });
 
@@ -20,7 +21,8 @@ router.get('/toefl/reading/:name', function *(next) {
   yield this.render('reading', {
     title: title,
     paragraphs: paragraphs,
-    questions: questions
+    questions: questions,
+    pageName: "reading"
   });
 });
 
