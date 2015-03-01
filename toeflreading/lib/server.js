@@ -13,6 +13,7 @@ render(app);
 app
   .use(router.routes())
   .use(serve('static'))
+  .use(serve('bower_components'))
   .use(router.allowedMethods());
 
 module.exports = app;
