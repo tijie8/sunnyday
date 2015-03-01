@@ -26,5 +26,7 @@ router.get('/toefl/reading/:name', function *(next) {
   });
 });
 
+router.redirect('/', '/toefl/reading');
+
 exports.router = router; 
 
