@@ -10,9 +10,12 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'static/scripts/reading.js',
-        dest: 'build/static/scripts/reading.min.js'
-      }
+        expand: true,
+        cwd: 'static',
+        src: '**/*.js',
+        dest: 'build/static',
+        ext: '.min.js'
+      },
     },
     copy: [{
           cwd: 'lib',
@@ -34,7 +37,7 @@ module.exports = function(grunt) {
         },
         {
           cwd: 'static',
-          src: '**/*',
+          src: ['**/*', '!**/*.js'],
           dest: 'build/static',
           expand: true,
           options: {
