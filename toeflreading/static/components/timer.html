@@ -3,6 +3,14 @@
 <polymer-element name="t-timer">
   <template>
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css"> 
+    <style>
+      :host {
+        font-size: 20px;
+        font-weight: bolder;
+        display: inline-block;
+        margin-left: 50px;
+      }
+    </style>
     <span class="time" id="time"> 20:00 </span>
     <button id="timerStart" class="btn btn-default" on-click="{{ onStart }}">Start</button>
     <button id="timerReset" class="btn btn-default" on-click="{{ onReset }}">Reset</button>

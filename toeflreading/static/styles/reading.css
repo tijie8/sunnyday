@@ -1,24 +1,3 @@
-.questions {
-  height: 640px;
-  padding-right: 30px;
-}
-.question quote {
-  display: block;
-  margin: 5px 0 5px;
-}
-.questions .question{
-  list-style-type: none;
-  margin: 0 0 50px 0;
-}
-.questions .choice {
-  list-style-type: none;
-  margin: 8px 0 0 -40px;
-  padding-left: 3px;
-  border-radius: 6px;
-}
-.questions .choice input[type="radio"] {
-  margin: 4px 6px 0 0;
-}
 .article {
   height: 640px;
   min-height: 100%;
@@ -43,12 +22,7 @@
 .question-control button{
   margin: 0 10px 0;
 }
-.answer-wrong {
-  background: rgba(247, 203, 203, 0.9);
-}
-.answer-correct {
-  background: rgba(181, 245, 181, 0.76);
-}
+
 .highlight {
   background: rgba(7, 0, 0, 1);
   color: white;
@@ -58,9 +32,4 @@
   display: inline;
   margin: 0 5px 0;
 }
-.timer {
-  font-size: 20px;
-  font-weight: bolder;
-  display: inline-block;
-  margin-left: 50px;
-}
+
