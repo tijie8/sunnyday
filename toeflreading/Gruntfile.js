@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
   var replaceJs = function(content, srcpath) {
-    return content.replace(new RegExp('\.js', 'gm'), '.min.js');
+    return content.replace(new RegExp('\\.js', 'gm'), '.min.js');
   };
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
