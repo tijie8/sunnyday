@@ -29,7 +29,7 @@ module.exports = function(grunt) {
         {
           cwd: 'bower_components',
           src: '**/*',
-          dest: 'build/static',
+          dest: 'build/bower_components',
           expand: true,
           options: {
             process: replaceJs          
