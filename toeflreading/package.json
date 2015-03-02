@@ -13,6 +13,11 @@
   "devDependencies": {
     "chai": "^2.1.0",
     "chai-webdriver": "^1.1.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-uglify": "^0.8.0",
     "mocha": "^2.1.0",
     "selenium-webdriver": "^2.45.0",
     "webdriverio": "^2.4.5",
