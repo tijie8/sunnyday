@@ -25,3 +25,6 @@
 ::content .answer-correct {
   background: rgba(181, 245, 181, 0.76);
 }
+.overflow {
+  overflow: auto;
+}
