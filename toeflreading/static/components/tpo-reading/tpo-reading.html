@@ -1,0 +1,25 @@
+<link rel="import" href="/polymer/polymer.html">
+<link rel="import" href="../timer/timer.html">
+
+<polymer-element name="tpo-reading">
+  <template>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="tpo-reading.css"> 
+    <div class="container">
+      <div class="row">
+        <t-timer></t-timer>
+        <div class="question-control pull-right">
+          <a id="back-to-list" href="/toefl/reading" class="btn btn-default">Return to list</a>
+          <button id="showAnswers" on-click="{{ showAnswers }}" class="btn btn-default">Show Answers</button>
+
+          <button id="previousQuestion" on-click="{{showPreviousQuestion}}" class="btn btn-default" disabled="true">Previous</button>
+          <button id="nextQuestion" on-click="{{showNextQuestion}}" class="btn btn-default">Next</button> 
+        </div>
+      </div>
+      <div class="row">
+        <content></content> 
+      </div> 
+    </div>
+  </template>
+  <script src="tpo-reading.js"></script>
+</polymer-element>

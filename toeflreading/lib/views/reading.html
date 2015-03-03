@@ -1,36 +1,20 @@
-<div class="container">
-  <div class="row">
-    <t-timer></t-timer>
-    <div class="question-control pull-right">
-      <a id="back-to-list" href="/toefl/reading" class="btn btn-default">Return to list</a>
-      <button id="show-answers" class="btn btn-default">Show Answers</button>
-
-        <button id="previous-question" class="btn btn-default" disabled="true">Previous</button>
-        <button id="next-question" class="btn btn-default">Next</button> 
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-5 questions-wrapper">
-      <t-questions> 
-        <% for (var i = 0; i < questions.length; i++) { %>
-        <li class="question question-<%- i+1 %> hidden">
-          <b><%- i+1%>. </b>
-          <%- questions[i] %> 
-        </li> 
-        <% } %>
-      </t-questions>        
-    </div>
-    <div class="col-xs-7 article-wrapper">
-      <t-article>
-        <h2>
-          <%= title %> 
-        </h2>
-        <% paragraphs.forEach(function(paragraph){ %>
-        <p>
-          <%- paragraph %> 
-        </p>
-        <% })%>
-      </t-article>
-    </div>
-  </div> 
-</div>
+<tpo-reading>
+  <t-questions id="questions" class="col-xs-5 questions-wrapper"> 
+    <% for (var i = 0; i < questions.length; i++) { %>
+    <li class="question hidden">
+      <b><%- i+1%>. </b>
+      <%- questions[i] %> 
+    </li> 
+    <% } %>
+  </t-questions>        
+  <t-article id="article" class="col-xs-7 article-wrapper">
+    <h2>
+      <%= title %> 
+    </h2>
+    <% paragraphs.forEach(function(paragraph){ %>
+    <p>
+      <%- paragraph %> 
+    </p>
+    <% })%>
+  </t-article>
+</tpo-reading>

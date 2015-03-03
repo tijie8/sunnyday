@@ -1,13 +1,6 @@
-<div class="container">
-  <div class="title">
-    <h2> TPO Reading Practice </h2> 
-  </div>
-  </div>
+<tpo-reading-list>
   <% names.forEach(function(name){ %>
     <a class="btn btn-default tpo-reading" href="/toefl/reading/<%= name %>"><%= name %></a>
   <% }) %>
-  <div class="footer pull-right">
-    <a href="mailto:toefl@nich01as.com" target="_top">TOEFL@nich01as.com</a>
-  </div>
-</div>
+</tpo-reading-list>
 

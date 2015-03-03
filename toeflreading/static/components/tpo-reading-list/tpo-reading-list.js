@@ -1,0 +1,2 @@
+Polymer('tpo-reading-list', {
+});

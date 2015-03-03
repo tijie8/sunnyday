@@ -10,3 +10,13 @@
 .overflow {
   overflow: auto;
 }
+::content .highlight {
+  background: rgba(7, 0, 0, 1);
+  color: white;
+  padding: 0 2px 0 2px;
+}
+::content .paragraph-indicator {
+  display: inline;
+  margin: 0 5px 0;
+}
+
