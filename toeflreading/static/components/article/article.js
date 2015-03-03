@@ -1,0 +1,2 @@
+Polymer('t-article', {
+});
