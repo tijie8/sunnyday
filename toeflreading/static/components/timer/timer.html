@@ -1,12 +1,13 @@
 <link rel="import" href="/polymer/polymer.html">
 
+<link rel="import" href="../button/button.html">
+
 <polymer-element name="t-timer">
   <template>
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="timer.css"> 
     <span class="time" id="time"> 20:00 </span>
-    <button id="timerStart" class="btn btn-default" on-click="{{ onStart }}">Start</button>
-    <button id="timerReset" class="btn btn-default" on-click="{{ onReset }}">Reset</button>
+    <t-button id="timerStart" on-click="{{ onStart }}">Start</t-button>
+    <t-button id="timerReset" on-click="{{ onReset }}">Reset</t-button>
   </template>
   <script src="timer.js"></script>
 </polymer-element>

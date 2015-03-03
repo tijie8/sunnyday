@@ -1,6 +1,8 @@
 <tpo-reading-list>
   <% names.forEach(function(name){ %>
-    <a class="btn btn-default tpo-reading" href="/toefl/reading/<%= name %>"><%= name %></a>
+    <t-button class="tpo-reading">
+      <a href="/toefl/reading/<%= name %>"><%= name %></a>
+    </t-button>
   <% }) %>
 </tpo-reading-list>
 

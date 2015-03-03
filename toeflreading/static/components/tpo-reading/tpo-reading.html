@@ -9,11 +9,13 @@
       <div class="row">
         <t-timer></t-timer>
         <div class="question-control pull-right">
-          <a id="back-to-list" href="/toefl/reading" class="btn btn-default">Return to list</a>
-          <button id="showAnswers" on-click="{{ showAnswers }}" class="btn btn-default">Show Answers</button>
+          <t-button>
+            <a id="back-to-list" href="/toefl/reading">Return to list</a>
+          </t-button>
+          <t-button id="showAnswers" on-click="{{ showAnswers }}">Show Answers</t-button>
 
-          <button id="previousQuestion" on-click="{{showPreviousQuestion}}" class="btn btn-default" disabled="true">Previous</button>
-          <button id="nextQuestion" on-click="{{showNextQuestion}}" class="btn btn-default">Next</button> 
+          <t-button id="previousQuestion" on-click="{{showPreviousQuestion}}" disabled="true">Previous</t-button>
+          <t-button id="nextQuestion" on-click="{{showNextQuestion}}">Next</t-button> 
         </div>
       </div>
       <div class="row">

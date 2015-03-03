@@ -1,5 +1,5 @@
 <tpo-reading>
-  <t-questions id="questions" class="col-xs-5 questions-wrapper"> 
+  <t-questions id="questions"> 
     <% for (var i = 0; i < questions.length; i++) { %>
     <li class="question hidden">
       <b><%- i+1%>. </b>
@@ -7,7 +7,7 @@
     </li> 
     <% } %>
   </t-questions>        
-  <t-article id="article" class="col-xs-7 article-wrapper">
+  <t-article id="article">
     <h2>
       <%= title %> 
     </h2>

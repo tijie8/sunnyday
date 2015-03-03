@@ -10,4 +10,15 @@
 .question-control button{
   margin: 0 10px 0;
 }
+.pull-right {
+  float: right!important;
+}
+::content t-questions {
+  width: 42%;
+  float: left;
+}
+::content t-article {
+  width: 58%;
+  float: left;
+}
 
