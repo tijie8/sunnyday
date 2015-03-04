@@ -1,21 +1,18 @@
-.questions {
-  padding-right: 30px;
-}
-.question ::content quote {
+::content quote {
   display: block;
   margin: 5px 0 5px;
 }
-.questions ::content .question{
+::content .question {
   list-style-type: none;
   margin: 0 0 50px 0;
 }
-.questions ::content .choice {
+::content .choice {
   list-style-type: none;
   margin: 8px 0 0 -40px;
   padding-left: 3px;
   border-radius: 6px;
 }
-.questions ::content .choice input[type="radio"] {
+::content .choice input[type="radio"] {
   margin: 4px 6px 0 0;
 }
 ::content .answer-wrong {
