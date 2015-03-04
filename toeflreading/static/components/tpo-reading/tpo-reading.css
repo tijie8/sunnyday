@@ -1,5 +1,5 @@
 .container {
-  margin-top: 30px;
+  margin: 30px;
 }
 .container h2 {
   margin-top: 0px;
@@ -13,15 +13,21 @@
 .pull-right {
   float: right!important;
 }
-.row {
+.controls {
   clear: both;
 }
-::content t-questions {
-  width: 42%;
-  float: left;
+.contents {
+  clear: both;
 }
-::content t-article {
+.questions {
+  width: 42%;
+}
+.article {
   width: 58%;
+}
+.fix-height {
+  height: 700px;
+  overflow: scroll;
   float: left;
 }
 

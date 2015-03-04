@@ -5,7 +5,7 @@
   <template>
     <link rel="stylesheet" href="tpo-reading.css"> 
     <div class="container">
-      <div class="row">
+      <div class="controlls">
         <t-timer></t-timer>
         <div class="question-control pull-right">
           <t-button href="/toefl/reading">Return to list</t-button>
@@ -15,8 +15,13 @@
           <t-button id="nextQuestion" on-click="{{showNextQuestion}}">Next</t-button> 
         </div>
       </div>
-      <div class="row">
-        <content></content> 
+      <div class="contents">
+        <div class="fix-height questions">
+          <content select="t-questions"></content> 
+        </div>
+        <div class="fix-height article">
+          <content select="t-article"></content> 
+        </div>
       </div> 
     </div>
   </template>

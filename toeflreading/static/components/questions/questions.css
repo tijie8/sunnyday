@@ -1,5 +1,4 @@
 .questions {
-  height: 640px;
   padding-right: 30px;
 }
 .question ::content quote {
@@ -25,6 +24,4 @@
 ::content .answer-correct {
   background: rgba(181, 245, 181, 0.76);
 }
-.overflow {
-  overflow: auto;
-}
+
