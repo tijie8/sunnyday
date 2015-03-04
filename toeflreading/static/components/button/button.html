@@ -1,10 +1,11 @@
 <link rel="import" href="/polymer/polymer.html">
 
-<polymer-element name="t-button" noscript>
+<polymer-element name="t-button" attributes="href">
   <template>
     <link rel="stylesheet" href="button.css"> 
-    <button>
+    <button on-click="{{ onClick }}">
       <content></content>
     </button>
   </template>
+  <script src="button.js"></script>
 </polymer-element>
