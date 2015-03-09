@@ -3,3 +3,5 @@ server/pkg/*
 toeflreading/node_modules
 *.swp
 *.swo
+.DS_STORE
+
