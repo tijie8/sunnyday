@@ -10,10 +10,20 @@
 h4 {
   color: rgb(133, 126, 126);
 }
-h2 {
-  display: inline;
-  padding-bottom: 30px;
-}
 .title {
   padding-bottom: 30px;
+}
+@media (max-width: 740px) {
+  .title {
+    display: inline;
+    padding-bottom: 10px;
+  }
+  .container {
+    margin: 5px;
+  }
+  ::content .tpo-reading {
+    float: left;
+    width: 120px;
+    margin: 3px 1px;
+  }
 }

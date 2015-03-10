@@ -4,4 +4,7 @@ toeflreading/node_modules
 *.swp
 *.swo
 .DS_STORE
+bower_components
+node_modules
+
 
