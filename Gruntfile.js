@@ -1,6 +1,22 @@
 module.exports = function(grunt) {
-  var replaceJs = function(content, srcpath) {
-    return content.replace(new RegExp('\\.js', 'gm'), '.min.js');
+  var timestamp = new Date().getTime();
+  var jsSuffix = '.' + timestamp + '.js';
+  var cssSuffix = '.' + timestamp + '.css';
+  var htmlSuffix = '.' + timestamp + '.html';
+
+  var replaceContent = function(content, srcpath) {
+    if (srcpath.indexOf('.html') > -1) {
+      return content.replace(new RegExp('\\.js', 'gm'), jsSuffix)
+        .replace(new RegExp('\\.html', 'gm'), htmlSuffix)
+        .replace(new RegExp('\\.css', 'gm'), cssSuffix);
+    } else {
+      return content;
+    }
+  };
+  var renameFile = function(dest, file) {
+    return (dest + '/' + file).replace('.js', jsSuffix)
+      .replace('.css', cssSuffix)
+      .replace('.html', htmlSuffix);
   };
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -14,7 +30,7 @@ module.exports = function(grunt) {
         cwd: 'static',
         src: '**/*.js',
         dest: 'build/static',
-        ext: '.min.js'
+        ext: jsSuffix 
       },
     },
     copy: [{
@@ -23,7 +39,7 @@ module.exports = function(grunt) {
           dest: 'build/lib',
           expand: true,
           options: {
-            process: replaceJs          
+            process: replaceContent 
           }
         },
         {
@@ -32,8 +48,9 @@ module.exports = function(grunt) {
           dest: 'build/bower_components',
           expand: true,
           options: {
-            process: replaceJs          
-          }
+            process: replaceContent 
+          },
+          rename: renameFile
         },
         {
           cwd: 'static',
@@ -41,8 +58,9 @@ module.exports = function(grunt) {
           dest: 'build/static',
           expand: true,
           options: {
-            process: replaceJs          
-          }
+            process: replaceContent 
+          },
+          rename: renameFile
         },
         {
           src: 'server.js',
