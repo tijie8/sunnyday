@@ -23,7 +23,7 @@ h4 {
   }
   ::content .tpo-reading {
     float: left;
-    width: 120px;
-    margin: 3px 1px;
+    width: 80px;
+    margin: 8px 8px;
   }
 }

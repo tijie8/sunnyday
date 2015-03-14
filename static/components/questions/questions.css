@@ -22,7 +22,7 @@
   background: rgba(181, 245, 181, 0.76);
 }
 @media (max-width: 740px) {
-  ul {
+  .question-list {
     padding: 0 3px;
   }
 }
