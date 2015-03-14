@@ -15,6 +15,9 @@
   width: 100%;
   overflow: hidden;
 }
+.question-control t-button {
+  width: 80px;
+}
 .contents {
   clear: both;
 }
@@ -75,7 +78,7 @@
   }
   .question-control {
     display: inline-block;
-    margin: 0 20px 0;
+    margin: 3px 10px;
   }
   .controls {
     position: fixed;
