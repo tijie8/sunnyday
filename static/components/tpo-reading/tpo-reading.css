@@ -83,7 +83,10 @@
   }
   .question-control {
     display: inline-block;
-    margin: 3px 10px;
+    margin: 3px 1px;
+  }
+  .question-control t-button {
+    width: 74px;
   }
   .controls {
     position: fixed;
