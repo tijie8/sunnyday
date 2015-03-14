@@ -11,6 +11,9 @@
 }
 .controls {
   clear: both;
+  background: white;
+  width: 100%;
+  overflow: hidden;
 }
 .contents {
   clear: both;
@@ -49,6 +52,10 @@
     box-sizing: border-box;
     background: white;
     float: left;
+    background: rgba(212, 218, 214, 0.92);
+    -webkit-box-shadow: 2px -2px 5px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    2px -2px 5px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         2px -2px 5px 0px rgba(50, 50, 50, 0.5);
   }
   .article {
     width: 100%;
@@ -58,7 +65,7 @@
     border-left-style: none;
     box-sizing: border-box;
     float: left;
-    overflow: visible;
+    overflow: scroll;
   }
   t-timer {
     display: none;
@@ -68,14 +75,13 @@
   }
   .question-control {
     display: inline-block;
-    margin: 0 20px 20px 0;
-    float: left;
+    margin: 0 20px 0;
   }
   .controls {
     position: fixed;
     top: 0px;
     left: 0px;
-    height: 20px;
+    height: 40px;
   }
 }
 
