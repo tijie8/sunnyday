@@ -41,7 +41,7 @@
   box-sizing: border-box;
   float: left;
 }
-.article::-webkit-scrollbar { 
+::-webkit-scrollbar { 
   display: none; 
 }
 @media (max-width: 740px) {
